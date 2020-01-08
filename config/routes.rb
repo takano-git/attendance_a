@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'static_pages#top'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'static_pages#top'
+  
+# get 'users/new' 　　　　　　　　コントローラーを生成したときに一緒に作られたルーティング
+  get '/signup', to: 'users#new'
+
 end
