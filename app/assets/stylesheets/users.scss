@@ -1,5 +1,6 @@
 
 /* ユーザー情報テーブル */
+
 .user-table {
   tr{
     th{
@@ -7,4 +8,14 @@
       text-align: center;
     }
   }
+}
+
+/* アカウント作成ページ */
+
+.label-signup {
+  margin-top: 5px;
+}
+
+.btn-signup {
+  margin-top: 10px;
 }
