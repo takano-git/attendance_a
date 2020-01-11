@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     # ↑これは悪い人が悪いことするかもしれないからストロングパラメーターを使う
     @user = User.new(user_params)
     if @user.save
+      log_in @user # 保存成功後、ログインします。
       flash[:success] = '新規作成に成功しました。'
     # redirect_to user_url(@user) これの省略形が下↓
       redirect_to @user 

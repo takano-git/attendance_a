@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
       # ログイン後にユーザー情報ページにリダイレクトします。
       # 引数に渡されたユーザーオブジェクトでログインします。
       log_in user
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_to user
     else
       # renderhはリクエストではなくページをレンダリングしている。
@@ -25,7 +26,8 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    log_out
+    # ログイン中の場合のみログアウト処理を実行します。
+    log_out if logged_in?
     flash[:success] = 'ログアウトしました'
     redirect_to root_url
   end
