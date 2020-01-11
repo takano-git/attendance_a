@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       # 引数に渡されたユーザーオブジェクトでログインします。
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to user
+      redirect_back_or user
     else
       # renderhはリクエストではなくページをレンダリングしている。
       # なので.nowがいる。
