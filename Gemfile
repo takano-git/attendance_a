@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails',        '~> 5.1.6'
 gem 'bcrypt'
 gem 'faker'
+gem 'roo' #Excel, CSV, OpenOffice, GoogleSpreadSheetを開くことが可能
 gem 'bootstrap-sass'
 gem 'puma',         '~> 3.7'
 gem 'sass-rails',   '~> 5.0'
