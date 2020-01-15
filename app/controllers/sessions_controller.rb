@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_back_or user
     else
-      # renderhはリクエストではなくページをレンダリングしている。
+      # renderはリクエストではなくページをレンダリングしている。
       # なので.nowがいる。
       # redirect_toならいらないのだと思う
       # flash.nowではレンダリングが終わっているページでフラッシュメッセージを表示することができます。
