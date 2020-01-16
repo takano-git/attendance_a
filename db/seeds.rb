@@ -8,40 +8,50 @@
 
 # coding: utf-8
 
-User.create!(name: "Admin",
+User.create!(name: "システム管理者",
              email: "sample@email.com",
              password: "password",
              password_confirmation: "password",
-             admin: true)
+             admin: true,
+             superior: false)
              
-User.create!(name: "Superior1",
-             email: "Superior1@email.com",
+User.create!(name: "上長1",
+             email: "superior1@email.com",
              password: "password",
              password_confirmation: "password",
+             admin: false,
              superior: true)
 
-User.create!(name: "Superior2",
-             email: "Superior2@email.com",
+User.create!(name: "上長2",
+             email: "superior2@email.com",
              password: "password",
              password_confirmation: "password",
+             admin: false,
              superior: true)
 
-User.create!(name: "Staff1",
-             email: "staff1@email.com",
+User.create!(name: "一般1",
+             email: "general1@email.com",
              password: "password",
-             password_confirmation: "password")
+             password_confirmation: "password",
+             admin: false,
+             superior: false)
              
-User.create!(name: "Staff2",
-             email: "staff2@email.com",
+User.create!(name: "一般2",
+             email: "general2@email.com",
              password: "password",
-             password_confirmation: "password")
+             password_confirmation: "password",
+             admin: false,
+             superior: false)
 
-10.times do |n|
+5.times do |n|
   name = Faker::Name.name
   email ="sample-#{n+1}@email.com"
   password = "password"
   User.create(name: name,
               email: email,
               password: password,
-              password_confirmation: password)
+              password_confirmation: password,
+             admin: false,
+             superior: false)
+
 end

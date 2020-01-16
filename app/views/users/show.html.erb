@@ -8,7 +8,7 @@
       <th>初日　00/00</th>
     </tr>
     <tr>
-      <th>所属　<%= @user.affiliation %></th>
+      <th>所属　<%= @user.affiliation.present? ? @user.affiliation : "未所属" %></th>
       <th>氏名　<%= @user.name %></th>
       <th>コード</th>
       <th>9999</th>
