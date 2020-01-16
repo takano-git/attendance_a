@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   
   resources :users do
     collection { post :import }
+    patch 'update_basic_info'
   end
 end
