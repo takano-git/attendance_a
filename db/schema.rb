@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200115124814) do
+ActiveRecord::Schema.define(version: 20200116055853) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -22,7 +22,13 @@ ActiveRecord::Schema.define(version: 20200115124814) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "remember_digest"
+    t.integer "employee_number"
+    t.string "uid"
+    t.datetime "basic_work_time"
+    t.datetime "designated_work_start_time"
+    t.datetime "designated_work_end_time"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["employee_number"], name: "index_users_on_employee_number", unique: true
   end
 
 end

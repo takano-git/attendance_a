@@ -10,6 +10,8 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: true
   validates :affiliation, length: { in: 2..50 }, allow_blank: true
+  # validates :employee_number
+  # validates :uid
   has_secure_password   
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
