@@ -10,6 +10,18 @@
   }
 }
 
+/* ユーザー勤怠テーブル */
+
+#table-attendances {
+  th {
+    vertical-align: bottom;
+    text-align: center;
+  }
+  td {
+    vertical-align: middle;
+    text-align: center;
+  }
+}
 /* アカウント作成ページ */
 
 .label-signup {
