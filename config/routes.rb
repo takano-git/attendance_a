@@ -14,5 +14,11 @@ Rails.application.routes.draw do
   resources :users do
     collection { post :import }
     patch 'update_basic_info'
+
+    member do
+      # collection { post :import }
+      # patch 'update_basic_info'
+    end
+    resources :attendances, only: :update
   end
 end
