@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    @worked_sum = @attendances.where.not(started_at: nil).count
   end
   
   def new
@@ -65,7 +66,11 @@ class UsersController < ApplicationController
 
   def import
     # fileはtmpに自動で一時保存される
-    User.import(params[:file])
+    if User.import(params[:file])
+      flash[:success] = "CSVファイルをインポートしました。"
+    else
+      flash[:danger] = "CSVファイルインポートに失敗しました。やり直してください。"
+    end
     redirect_to users_url
   end
 

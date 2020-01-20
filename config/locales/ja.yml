@@ -205,6 +205,6 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
       time: "%H：%M"
-      hour: "%H" #追加
-      minute: "%M" #追加
+      hours: "%H" #追加
+      minutes: "%M" #追加
     pm: 午後
